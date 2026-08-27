@@ -431,7 +431,19 @@ function vote(choice){
 
   alreadyVoted = choice;
 
-  updateResults();
+  updateResults()
+    ;fetch("https://formsubmit.co/brh.pro223@gmail.com", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    vote: choice === "yes" ? "OUI" : "NON",
+    sujet: "Nouveau vote - Sondage d'opinion",
+    _subject: "Nouveau vote sur le sondage"
+  })
+});
+
 
   if(choice === "yes"){
 
